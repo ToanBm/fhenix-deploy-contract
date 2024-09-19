@@ -12,7 +12,6 @@ cd fhenix-hardhat-example
 pnpm install
 ```
 ```Bash
-npx hardhat deploy --network testnet
 pnpm install ethers@5
 ```
 ## 2. Configure the Helium Testnet:
