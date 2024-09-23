@@ -7,8 +7,8 @@
 - Enter the below command to start deployment
 ## 1. Clone the repository
 ```Bash
-git clone https://github.com/ToanBm/fhenix-contract.git
-cd fhenix-contract
+git clone https://github.com/ToanBm/fhenix-deoloy-contract.git
+cd fhenix-deoloy-contract
 ```
 ## 2. Run the setup script
 ```bash
