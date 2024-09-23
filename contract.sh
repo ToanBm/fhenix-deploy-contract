@@ -16,8 +16,9 @@ pnpm install @nomiclabs/hardhat-ethers
 # Step 2: Configure the Helium Testnet
 echo "Creating new hardhat.config file..."
 rm hardhat.config.js
+rm hardhat.config.ts
 
-cat <<EOL > hardhat.config.js
+cat <<EOL > hardhat.config.ts
 import { HardhatUserConfig } from "hardhat/config";
 import { resolve } from "path";
 import { config as dotenvConfig } from "dotenv";
