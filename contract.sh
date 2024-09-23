@@ -32,7 +32,7 @@ const TESTNET_RPC_URL = "https://api.helium.fhenix.zone";
 const testnetConfig = {
     chainId: TESTNET_CHAIN_ID,
     url: TESTNET_RPC_URL,
-    accounts: [process.env.PRIVATE_KEY || ""],
+    accounts: [\`0x\${process.env.PRIVATE_KEY}\`],
 };
 
 const config: HardhatUserConfig = {
