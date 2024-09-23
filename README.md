@@ -12,7 +12,8 @@ cd fhenix-hardhat-example
 pnpm install
 ```
 ```Bash
-pnpm install ethers@5
+pnpm install @nomiclabs/hardhat-ethers
+
 ```
 ## 2. Configure the Helium Testnet:
 ### Config file:
