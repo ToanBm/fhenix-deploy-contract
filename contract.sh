@@ -55,7 +55,7 @@ EOL
 echo "Creating deploy script..."
 rm deploy/deploy.ts
 
-cat <<EOL > deploy/deploy.ts
+cat <<'EOL' > deploy/deploy.ts
 import { DeployFunction } from "hardhat-deploy/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import chalk from "chalk";
