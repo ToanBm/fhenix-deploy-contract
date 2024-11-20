@@ -27,8 +27,8 @@ import "@nomiclabs/hardhat-ethers"; // Import hardhat-ethers
 
 dotenvConfig({ path: resolve(__dirname, "./.env") });
 
-const TESTNET_CHAIN_ID = 8008135;
-const TESTNET_RPC_URL = "https://api.helium.fhenix.zone";
+const TESTNET_CHAIN_ID = 8008148;
+const TESTNET_RPC_URL = "https://api.nitrogen.fhenix.zone";
 
 const testnetConfig = {
     chainId: TESTNET_CHAIN_ID,
