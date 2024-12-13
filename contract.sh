@@ -8,7 +8,9 @@ show() {
 }
 
 # Step 1. Clone Hardhat Template
-git clone https://github.com/FhenixProtocol/fhenix-hardhat-example.git && cd fhenix-hardhat-example
+git clone https://github.com/FhenixProtocol/fhenix-hardhat-example.git
+cd fhenix-hardhat-example
+
 pnpm install
 pnpm install @nomiclabs/hardhat-ethers
 npm install ethers@^6.1.0
