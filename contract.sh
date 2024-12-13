@@ -10,8 +10,9 @@ show() {
 # Step 1. Clone Hardhat Template
 git clone https://github.com/FhenixProtocol/fhenix-hardhat-example.git && cd fhenix-hardhat-example
 pnpm install
-pnpm install ethers@5
 pnpm install @nomiclabs/hardhat-ethers
+npm install ethers@^6.1.0
+
 
 # Step 2: Configure the Helium Testnet
 echo "Creating new hardhat.config file..."
@@ -30,17 +31,38 @@ dotenvConfig({ path: resolve(__dirname, "./.env") });
 const TESTNET_CHAIN_ID = 8008148;
 const TESTNET_RPC_URL = "https://api.nitrogen.fhenix.zone";
 
+// Ensure PRIVATE_KEY is set in the .env file
+if (!process.env.PRIVATE_KEY || process.env.PRIVATE_KEY.trim() === "") {
+  throw new Error("PRIVATE_KEY is missing in the .env file.");
+}
+
 const testnetConfig = {
-    chainId: TESTNET_CHAIN_ID,
-    url: TESTNET_RPC_URL,
-    accounts: [\`0x\${process.env.PRIVATE_KEY}\`],
+  chainId: TESTNET_CHAIN_ID,
+  url: TESTNET_RPC_URL,
+  accounts: [`0x${process.env.PRIVATE_KEY}`],
 };
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.25",
+  solidity: {
+    version: "0.8.25",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
   defaultNetwork: "hardhat",
   networks: {
+    hardhat: {
+      chainId: 1337, // Use Hardhat's default chainId for local development
+    },
     testnet: testnetConfig,
+  },
+  namedAccounts: {
+    deployer: {
+      default: 0, // Use the first account for deployments
+    },
   },
   typechain: {
     outDir: "types",
