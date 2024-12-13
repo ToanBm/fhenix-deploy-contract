@@ -8,8 +8,7 @@ show() {
 }
 
 # Step 1. Clone Hardhat Template
-git clone https://github.com/FhenixProtocol/fhenix-hardhat-example.git
-cd fhenix-hardhat-example
+git clone https://github.com/FhenixProtocol/fhenix-hardhat-example.git && cd fhenix-hardhat-example
 
 pnpm install
 pnpm install @nomiclabs/hardhat-ethers
@@ -124,6 +123,7 @@ EOF
 
 # "Waiting before deploying..."
 sleep 5
+cd fhenix-hardhat-example
 
 # Step 5: Deploy the contract to the Hemi network
 echo "Deploy your contracts..."
